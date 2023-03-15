@@ -9,11 +9,11 @@ def monta_tabela():
     headers = ["UID","Username","Email"]
     dados = getProfiles()
 
-    print(dados.data)
+    print(dados.data[1])
 
     root = tk.Tk()
     root.title('Tabela gerada com Thread 1')
-    tabela = Tabela(root, 20, 3, headers, dados.data)
+    tabela = Tabela(root, 2, 3, headers, dados.data)
     root.mainloop()
 
 def monta_formulario():
