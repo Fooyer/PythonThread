@@ -35,7 +35,13 @@ class Tabela:
                 if i == 0 and self.headers:  # Se for a primeira linha e houver um cabeçalho definido
                     label = tk.Label(master=frame, text=self.headers[j], bg='aqua', highlightbackground='aqua') 
                 else:
-                    label = tk.Label(master=frame, text=f'{self.dados[i-1]["id"]}', bg='white', highlightbackground='white')
+                    if j==0:
+                        label = tk.Label(master=frame, text=f'{self.dados[i-1]["id"]}', bg='white', highlightbackground='white')
+                    elif j==1:
+                        label = tk.Label(master=frame, text=f'{self.dados[i-1]["username"]}', bg='white', highlightbackground='white')
+                    elif j==2:
+                        label = tk.Label(master=frame, text=f'{self.dados[i-1]["email"]}', bg='white', highlightbackground='white')
+                
                 
                 label.pack(pady=5, padx=5)
                 frame.columnconfigure(0, weight=1)
